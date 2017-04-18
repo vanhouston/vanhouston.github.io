@@ -244,9 +244,17 @@
 <!-- Core Scripts -->
 <script src="js/core.min.js"></script>
 <!-- Additional Functionality Scripts -->
-<script src="js/script.js"></script>
+<script src="js/script.js"></script><script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('google-map'), {
+          center: {lat: 29.7043269, lng: -95.6285408},
+          zoom: 8
+        });
+      }
+    </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdmRiaSY8txVCw0lDR_O1bkd9gSEK2gJM&callback=lazyInit">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdmRiaSY8txVCw0lDR_O1bkd9gSEK2gJM&callback=initMap">
 </script>
 
 </body>
