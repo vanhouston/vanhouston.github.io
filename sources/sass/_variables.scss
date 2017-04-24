@@ -1,0 +1,74 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+// Use relative measurements. Change to 0 on "Post Production"
+$debug: 0;
+
+// Layouts
+$layout-boxed-width: 1920px;
+$layout-boxed-bg: #444;
+
+
+// Resolutions
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+
+// Fonts
+$default-font-family: 'Open Sans', sans-serif;
+$primary-font-family: 'Merriweather', serif;
+$default-font-weight: 300;
+$default-font-size: 16px;
+$default-line-height: 25px;
+
+
+// Anchor Colors
+$default: #000;
+$contrast: #fff;
+$white: #fff;
+
+$primary: #fc8f44;
+
+$secondary: #2379a3;
+
+
+// Relative Colors
+
+$grayscale-darkest-variant-1: lighten(saturate(adjust_hue(#000000, 0), 0%), 15.294117647058824%);
+$grayscale-darkest: lighten(saturate(adjust_hue(#000000, 25.714285714285698), 9.589041095890407%), 14.313725490196077%);
+$grayscale-darken-variant-1: lighten(saturate(adjust_hue(#000000, 0), 0%), 39.21568627450981%);
+$grayscale-darken: lighten(saturate(adjust_hue(#000000, 27.272727272727245), 6.508875739644972%), 33.13725490196079%);
+$grayscale-default: lighten(saturate(adjust_hue(#000000, 25.00000000000001), 4.7999999999999945%), 49.01960784313725%);
+
+$grayscale-lighten: lighten($default, 92.15686274509804%);
+$grayscale-lightest: lighten($default, 96.47058823529412%);
+
+
+$primary-darken: darken(desaturate(adjust_hue(#fc8f44, -4.789855072463762), 17.89473684210529%), 7.450980392156858%);
+
+$secondary-darken: darken(saturate(adjust_hue(#2379a3, 0.3125), 35.35353535353535%), 21.17647058823529%);
+$secondary-lighten: lighten(saturate(adjust_hue(#2379a3, -0.015368852459033633), 1.6578831796223028%), 25.09803921568627%);
+$secondary-lightest: lighten(desaturate(adjust_hue(#2379a3, 2.130681818181756), 20.646464646464636%), 56.27450980392157%);
+$secondary-lightest-variant-1: lighten(desaturate(adjust_hue(#2379a3, 0.3125000000000284), 24.64646464646458%), 55.29411764705882%);
+$secondary-lightest-variant-2: lighten(desaturate(adjust_hue(#2379a3, 3.3894230769230944), 45.243479571837774%), 48.03921568627451%);
+
+
+
+$content-color: $grayscale-default;
+$content-bg: $contrast;
+
+// Round Corvers
+$border-radius-small: 3px;
+$border-radius-base: 5px;
+$border-radius-large: 8px;
+
+
+// Shadows
+$box-shadow-ambient: 0 0 0 rgba(0, 0, 0, .12);
+$box-shadow-key-small: 3px 4px 5px 0px rgba(0, 0, 0, 0.11);
+$box-shadow-key-light: 3px 4px 8px 0px rgba(0, 0, 0, 0.11);
+$box-shadow-key-light-large: 8px 14px 18px 0px rgba(0, 0, 0, 0.11);
+

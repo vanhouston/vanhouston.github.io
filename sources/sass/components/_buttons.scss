@@ -1,0 +1,219 @@
+/*
+* @subsection   Buttons
+*/
+
+$btn-xs-height: 33px;
+$btn-xs-size: 12px;
+
+$btn-sm-height: $btn-xs-height * 1.25;
+$btn-sm-size: $btn-xs-size * 1.12;
+
+$btn-md-height: $btn-sm-height * 1.2;
+$btn-md-size: $btn-sm-size * 1.11;
+
+$btn-lg-height: $btn-md-height * 1.33;
+$btn-lg-size: $btn-md-size;
+
+$btn-xl-height: $btn-lg-height * 1.125;
+$btn-xl-size: $btn-lg-size * 1.26;
+
+$btn-group-offset: 30px;
+
+// Button General Styles
+.btn {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  max-width: 100%;
+  border-style: solid;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  border-radius: 24px;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  font-weight: 700;
+  transition: .3s all ease;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+// Button Layout Styles
+.btn-xs {
+  padding: ceil(($btn-xs-height - ($btn-xs-size * 1.2) - 4) / 2);
+  font-size: ceil($btn-xs-size);
+
+  .icon{
+    font-size: $btn-md-size * 1.33;
+    padding-right: 10px;
+    line-height: (1em / 1.33);
+  }
+}
+
+.btn-sm {
+  padding: ceil(($btn-sm-height - ($btn-sm-size * 1.2) - 4) / 2);
+  font-size: ceil($btn-sm-size);
+
+  .icon{
+    font-size: $btn-md-size * 1.29;
+    padding-right: 10px;
+    line-height: (1em / 1.29);
+  }
+}
+
+.btn-md {
+  font-size: ceil($btn-md-size);
+  padding: 15px 55px 17px;
+  letter-spacing: .6px;
+
+  .icon{
+    font-size: $btn-md-size * 1.42;
+    padding-right: 10px;
+    line-height: (1em / 1.42);
+  }
+  &--inset-1 {
+    @extend .btn-md;
+    padding: 15px 31px 17px;
+    @media (min-width: $screen-sm-min) {
+      padding: 15px 61px 17px;
+    }
+  }
+  &--inset-2 {
+    @extend .btn-md;
+    padding: 13px 36px;
+  }
+  &--inset-3 {
+    @extend .btn-md;
+    padding: 14px 39px;
+  }
+}
+
+.btn-lg {
+  padding: ceil(($btn-lg-height - ($btn-lg-size * 1.2) - 4) / 2) 40px;
+  font-size: ceil($btn-lg-size);
+
+  .icon{
+    font-size: $btn-lg-size * 2.47;
+    padding-right: 20px;
+    line-height: (1em / 2.47);
+  }
+}
+
+.btn-xl {
+  padding: ceil(($btn-xl-height - ($btn-xl-size * 1.2)) / 2);
+  font-size: ceil($btn-xl-size);
+
+  .icon{
+    font-size: $btn-xl-size * 1.875;
+    padding-right: 20px;
+    line-height: (1em / 1.875);
+  }
+}
+
+// Button Appearance Styles
+
+//.btn-default {
+//  color: $grayscale-darken;
+//  background: transparent;
+//  border-color: $grayscale-lighten;
+//
+//  &:hover {
+//    background: $grayscale-lighten;
+//  }
+//
+//  &:active {
+//    background: darken($grayscale-lighten, 5%);
+//    border-color: darken($grayscale-lighten, 5%);
+//  }
+//}
+
+.btn-contrast {
+  color: $secondary-lightest-variant-2;
+  background: transparent;
+  border: 3px solid $secondary-lightest;
+
+  &:hover {
+    color: $primary;
+    background: $secondary-lightest;
+  }
+
+}
+
+.btn-primary {
+  color: $contrast;
+  position: relative;
+  background: $primary;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 2px 29px 0px rgba(1, 1, 1, 0.09), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.15);
+  -moz-box-shadow: 0px 2px 29px 0px rgba(1, 1, 1, 0.09), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.15);
+  box-shadow: 0px 2px 29px 0px rgba(1, 1, 1, 0.09), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.15);
+
+  span {
+    position: relative;
+    z-index: 3;
+    text-shadow: 0px 1px 6px rgba(1, 1, 1, 0.2);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -20px;
+    right: -20px;
+    height: 85px;
+    -webkit-box-shadow: inset 0px -5px 25px 10px rgba(240, 130, 55, 1);
+    -moz-box-shadow: inset 0px -5px 25px 10px rgba(240, 130, 55, 1);
+    box-shadow: inset 0px -5px 25px 10px rgba(240, 130, 55, 1);
+    opacity: 0;
+    transition: .3s linear;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -20px;
+    right: -20px;
+    height: 85px;
+    -webkit-box-shadow: inset 0px 5px 25px 10px rgba(240, 130, 55, 1);
+    -moz-box-shadow: inset 0px 5px 25px 10px rgba(240, 130, 55, 1);
+    box-shadow: inset 0px 5px 25px 10px rgba(240, 130, 55, 1);
+    opacity: 0;
+    transition: .3s linear;
+  }
+
+  &:hover {
+    color: $contrast;
+    background: #f9a870;
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    background: #f9a870;
+    &:before {
+      opacity: 0;
+    }
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+// Button Group Styles
+.btn-group {
+  @include transform(translateY(-$btn-group-offset));
+  margin-bottom: -$btn-group-offset;
+  margin-left: -$btn-group-offset;
+
+  .btn {
+    margin-top: $btn-group-offset;
+    margin-left: $btn-group-offset;
+  }
+}

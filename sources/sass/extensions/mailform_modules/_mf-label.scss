@@ -1,0 +1,38 @@
+/**
+* RD Input Label
+* @Section
+*/
+.form-label {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  height: 100%;
+  padding: $input-padding;
+  transition: .3s all ease;
+  pointer-events: none;
+  color: $placeholder-clr;
+
+}
+
+.form-group.filled {
+  .form-label {
+    opacity: 0;
+  }
+}
+
+.form-label.focus {
+  opacity: .5;
+}
+
+.form-label.not-empty {
+  opacity: 0;
+}
+
+.form-group.filled {
+  .form-label {
+    opacity: 0;
+  }
+}

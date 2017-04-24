@@ -1,0 +1,1262 @@
+/*
+* @package      Style
+* @description  This package holds all common style declarations
+*               of the site
+*/
+
+@import "_variables.scss";
+@import "includes/_mixins.scss";
+
+@import "includes/_normalize.scss";
+@import "includes/_page-layouts.scss";
+@import "includes/tm-grid/_tm-grid.scss";
+
+
+/*
+* @section      Main Styles
+* @description  This section holds template default elements style declarations
+*/
+
+html {
+  font-size: 60px;
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+    font-size: 70px;
+  }
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-lg-min - 1) {
+    font-size: 80px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 100px;
+  }
+
+  .old-ie {
+    display: none;
+  }
+
+  &.lt-ie11 {
+    .old-ie{
+      display: block;
+    }
+  }
+}
+
+body {
+  font-family: $default-font-family;
+  font-weight: $default-font-weight;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: none;
+  color: $content-color;
+  background: $content-bg;
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+  }
+}
+
+
+/*
+* @subsection   Typography
+* @description  Describes default font settings for basic html elements and
+*               css classes
+*/
+
+h1, h2, h3, h4, h5, h6,
+.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+  display: block;
+  font-weight: 300;
+  font-family: $primary-font-family;
+
+  a:hover {
+    color: $primary;
+  }
+}
+
+h1, .heading-1 {
+  color: $grayscale-darkest;
+  font-size: 32px;
+  line-height: 1.3;
+  letter-spacing:.4px;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 40px;
+  }
+  @media (min-width: $screen-md-min) {
+    font-size: 44px;
+  }
+  @media (min-width: $screen-lg-min) {
+    font-size: 48px;
+  }
+}
+
+h2, .heading-2 {
+  color: $grayscale-darkest;
+  font-size: 30px;
+  line-height: 1.55;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 36px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 40px;
+  }
+}
+
+h3, .heading-3 {
+  color: $grayscale-darken;
+  font-size: 20px;
+  line-height: 1.3125;
+  @media (min-width: $screen-sm-min) {
+    font-size: 25px;
+  }
+  @media (min-width: $screen-lg-min) {
+    font-size: 32px;
+  }
+}
+
+h4, .heading-4 {
+  color: $grayscale-darken;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+h5, .heading-5 {
+  color: $secondary-lighten;
+  font-family: $default-font-family;
+  font-size: 16px;
+  line-height: 1.33;
+  @media (min-width: $screen-lg-min) {
+    font-size: 18px;
+    line-height: 2.33;
+  }
+}
+
+h6, .heading-6 {
+  color: $grayscale-darkest;
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+p, .list, .contact-info {
+  font-weight: 300;
+
+  a:hover {
+    color: $primary;
+  }
+}
+
+//mark {
+//  display: inline-block;
+//  padding: 5px;
+//  color: #FFF;
+//  background: $primary;
+//}
+//
+//em {
+//  color: $primary;
+//}
+//
+
+.small {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1.66;
+}
+
+
+hr{
+  height: 1px;
+  border: none;
+  color: #3f3935;
+  background: #3f3935;
+  margin: 0;
+  float: left;
+  width: 100%;
+}
+
+/*
+* @section      Main Layout
+* @description  This section holds class declarations for elements indent creation
+*/
+
+/*
+* @subsection   Offsets
+* @description  Describes vertical indentation between the elements
+*/
+
+* + h1 {
+  @media (max-width: $screen-lg-min - 1) {
+    margin-top: 20px;
+  }
+
+}
+
+h1 + h5 {
+  margin-top: 5px;
+}
+
+* + h2 {
+
+}
+
+h2 + h3 {
+  margin-top: 43px;
+}
+
+h2 + h5 {
+  @media (max-width: 479px) {
+    margin-top: 25px;
+  }
+}
+
+
+h2 + .row {
+  margin-top: 50px;
+}
+
+* + h3 {
+}
+
+* + h4 {
+
+}
+
+* + h5{
+
+}
+
+* + h6 {
+}
+
+* + p {
+  margin-top: 40px;
+}
+
+
+* + img {
+
+}
+
+img + p {
+  margin-top: 20px;
+  @media (min-width: $screen-lg-min) {
+    margin-top: 35px;
+  }
+
+}
+
+* + .btn{
+  margin-top: 25px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 40px;
+  }
+}
+
+h5 + .btn{
+  margin-top: 30px;
+}
+
+
+
+* + .link {
+
+}
+
+* + .list{
+
+}
+
+* + .index-list {
+
+}
+
+* + .marked-list {
+
+}
+
+* + .ordered-list {
+  margin-top: 42px;
+}
+
+* + .inline-list {
+
+}
+
+* + .contact-info {
+
+}
+
+* + .btn-group{
+  margin-top: 45px;
+}
+
+* + .box,
+* + .box-xs,
+* + .box-sm,
+* + .box-md,
+* + .box-lg {
+
+}
+
+* + .row{
+
+}
+
+* + .container {
+
+}
+
+* + .container-fluid{
+  margin-top: 66px;
+}
+
+* + .rd-mailform{
+  margin-top: 30px;
+  &.form-offset {
+    margin-top: 50px
+  }
+}
+
+* + .terms-list {
+  margin-top: 43px;
+}
+
+* + .offset {
+  &-1 {
+    margin-top: 25px;
+  }
+
+  &-2 {
+    margin-top: 20px;
+    @media (min-width: $screen-lg-min) {
+      margin-top: 30px;
+    }
+  }
+
+  &-3 {
+    margin-top: 23px;
+  }
+
+  &-4 {
+    margin-top: 35px;
+  }
+
+  &-8 {
+    margin-top: 17px;
+  }
+}
+
+* + .row.offset-3 {
+  margin-top: 23px;
+}
+
+* + .row.offset-4 {
+  margin-top: 35px;
+}
+
+* + .row.offset-7 {
+  margin-top: 45px;
+}
+
+* + .row.offset-9 {
+  margin-top: 37px;
+}
+
+.offset-5 {
+  @media (min-width: $screen-lg-min) {
+    margin-top: -20px;
+  }
+}
+
+
+* + time{
+
+}
+
+p + p{
+  margin-top: 5px;
+  @media (min-width: $screen-lg-min) {
+    margin-top: 14px;
+  }
+}
+
+.box, .box-xs, .box-sm, .box-md, .box-lg {
+  & + .box,
+  & + .box-xs,
+  & + .box-sm,
+  & + .box-md,
+  & + .box-lg {
+
+  }
+}
+
+.flow-offset-1 {
+  @include make-flow-offset(50px);
+  @media (min-width: 1281px) {
+    @include make-flow-offset(74px);
+  }
+}
+
+.flow-offset-2 {
+  @include make-flow-offset(60px);
+}
+
+.flow-offset-3 {
+  @include make-flow-offset(50px);
+}
+
+.flow-offset-4 {
+  @include make-flow-offset(50px);
+  @media (min-width: 1281px) {
+    @include make-flow-offset(89px);
+  }
+}
+
+.row-no-gutter.flow-offset-5 {
+  @include make-flow-offset(40px);
+  @media (min-width: $screen-sm-min) {
+    @include make-flow-offset(0px);
+  }
+}
+
+.container {
+  .rd-navbar-search-results{
+    .result-item + .result-item{
+      margin-top: 30px;
+    }
+  }
+}
+
+/*
+* @subsection   Insets
+* @description  Describes instant padding classes
+*/
+
+.inset {
+  &-1 {
+    padding-top: 25px;
+    padding-bottom: 140px;
+    @media (min-width: 640px) {
+      padding-top: 35px;
+      padding-bottom: 190px;
+    }
+    @media (min-width: $screen-sm-min) {
+      padding-top: 100px;
+      padding-bottom: 250px;
+    }
+    @media (min-width: $screen-md-min) {
+      padding-bottom: 300px;
+    }
+    @media (min-width: $screen-lg-min) {
+      padding-top: 116px;
+      padding-bottom: 438px;
+    }
+  }
+
+  &-2 {
+    @media (min-width: $screen-lg-min) {
+      padding-right: 50px;
+    }
+
+  }
+
+  &-3 {
+    @media (min-width: $screen-lg-min) {
+      padding-right: 100px;
+    }
+  }
+
+  &-4 {
+    @media (min-width: $screen-lg-min) {
+      padding-top: 12px;
+      padding-bottom: 18px;
+    }
+  }
+
+  &-5 {
+    padding-top: 27px;
+  }
+
+  &-6 {
+    @media (min-width: $screen-lg-min) {
+      padding-right: 12px;
+    }
+  }
+
+  &-7 {
+    @media (min-width: $screen-lg-min) {
+      padding-right: 27px;
+    }
+  }
+
+  &-8 {
+    @media (min-width: $screen-lg-min) {
+      padding-right: 15px;
+    }
+  }
+}
+
+
+/*
+* @subsection   Well
+* @description  Describes section inner indents
+*/
+
+.well-xs {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+.well-sm {
+  padding-top: 97px;
+  padding-bottom: rem(105px);
+}
+
+.well-md {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  @media (min-width: 1281px) {
+    padding-top: rem(104px);
+    padding-bottom: rem(120px);
+  }
+  &--inset-1 {
+    padding-top: 10px;
+    padding-bottom: 55px;
+    @media (min-width: $screen-md-min) {
+      padding-top: 55px;
+    }
+    @media (min-width: 1281px) {
+      padding-top: rem(104px);
+      padding-bottom: rem(80px);
+    }
+  }
+  &--inset-2 {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    @media (min-width: 1281px) {
+      padding-top: rem(104px);
+      padding-bottom: rem(115px);
+    }
+  }
+  &--inset-3 {
+    padding-top: 10px;
+    padding-bottom: 55px;
+    @media (min-width: $screen-md-min) {
+      padding-top: 55px;
+    }
+    @media (min-width: 1281px) {
+      padding-top: rem(104px);
+      padding-bottom: rem(115px);
+    }
+  }
+}
+
+.well-lg {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  @media (min-width: 1281px) {
+    padding-top: rem(108px);
+    padding-bottom: rem(120px);
+  }
+  &--inset-1 {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    @media (min-width: 1281px) {
+      padding-top: rem(116px);
+      padding-bottom: rem(120px);
+    }
+  }
+  &--inset-2 {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    @media (min-width: 1281px) {
+      padding-top: rem(108px);
+      padding-bottom: rem(107px);
+    }
+  }
+}
+
+.well-xl {
+  padding-top: rem(150px);
+  padding-bottom: rem(150px);
+}
+
+/*
+* @section      Helpers
+* @description  This section holds various helper classes for
+*               conditional page styling
+*/
+
+.round {
+  border-radius: 50%;
+}
+
+.margin-negative {
+  @media (min-width: $screen-lg-min) {
+    margin-left: -60px;
+  }
+  &-2 {
+    @media (min-width: $screen-lg-min) {
+      margin-left: -10px;
+    }
+  }
+}
+
+.text-style-1 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.relative {
+  position: relative;
+}
+
+.height100 {
+  height: 100%;
+  width: auto;
+}
+
+.info-block {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  min-height: 350px;
+
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    transition: .5s all ease;
+  }
+
+  .desktop & {
+    &:hover {
+      img {
+        @include transform(scale(1.1));
+      }
+    }
+  }
+
+  .img-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.6);
+    }
+    text-align: center;
+    @media (min-width: $screen-sm-min) {
+      text-align: left;
+    }
+    .img-overlay_cnt {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      @include transform(translateY(-50%));
+      left: 0;
+      padding: 0 30px;
+      color: $contrast;
+      h4 {
+        color: $contrast;
+      }
+    }
+  }
+}
+
+
+/*
+* @subsection   Colors
+*/
+
+html body .page { // Increases specificity to use with background helpers
+  .text-primary {
+    color: $primary;
+  }
+}
+
+
+/*
+* @subsection   Backgrounds
+*/
+
+.bg-grayscale-darkest-variant-1 {
+  background: $grayscale-darkest-variant-1;
+}
+
+.bg-primary-darken {
+  background: $primary-darken;
+  color: $contrast;
+  h2,h3,h4 {
+    color: $contrast;
+  }
+}
+
+.bg-secondary-lightest {
+  background: $secondary-lightest;
+}
+
+.bg-secondary-lightest-variant-1 {
+  background: $secondary-lightest-variant-1;
+}
+
+.bg-secondary-darken {
+  background: $secondary-darken;
+  color: $contrast;
+  h1, h2, h4 {
+    color: $contrast;
+  }
+  .box-type-1 {
+    .box__body {
+      p {
+        color: $secondary-lighten;
+      }
+    }
+  }
+}
+
+.bg-image {
+  @media (max-width: $screen-lg-min - 1) {
+    background-size: cover;
+  }
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+@import "components/_floating.scss";
+@import "components/_text-alignment.scss";
+@import "components/_text-styling.scss";
+@import "components/_responsive-utilities";
+@import "components/_animate.scss";
+
+/*
+* @section      Icon Fonts
+* @description  This section holds all icon fonts stored in template
+*/
+
+@import "components/_font-awesome.scss";
+@import "components/_thin.scss";
+
+
+/*
+* @section      Components
+* @description  This section holds all elements style declarations of template
+*/
+
+@import "components/_buttons.scss";
+@import "components/_icons.scss";
+
+/*
+ * @subsection   Box
+ */
+@import "includes/tm-box/_boxes.scss";
+
+
+.box-type-1 {
+  .box__body {
+    text-align: center;
+    @media (min-width: $screen-sm-min) {
+      text-align: left;
+    }
+    h4 + p {
+      margin-top: 10px;
+    }
+    @media (min-width: $screen-sm-min) {
+      padding-top: 10px;
+      h4 + p {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.box-type-2 {
+  .box__body {
+    padding-left: 10px;
+    h4 + p {
+      margin-top: 10px;
+    }
+    @media (min-width: $screen-sm-min) {
+      h4 + p {
+        margin-top: 15px;
+      }
+    }
+    &.box-inset-1 {
+      padding-top: 20px;
+      @media (min-width: $screen-lg-min) {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+
+/*
+* @subsection   Quote
+*/
+.quote{
+  position: relative;
+
+  img {
+    @media (min-width: $screen-lg-min) {
+      padding-left: 10px;
+    }
+    & + * {
+      margin-top: 25px;
+    }
+  }
+  p {
+    @media (min-width: $screen-lg-min) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    & + p {
+      margin-top: 15px;
+    }
+  }
+  q {
+    font: 300 italic 18px/40px $primary-font-family;
+    letter-spacing: -0.1px;
+    @media (min-width: $screen-sm-min) {
+      font-size: 20px;
+    }
+    @media (min-width: $screen-md-min) {
+      font-size: 24px;
+    }
+  }
+  cite {
+    font: 700 17px/40px $default-font-family;
+  }
+}
+
+/*
+* @subsection   Pricing Box
+*/
+
+.pricing-box{
+
+}
+
+/*
+* @subsection   Breadcrumbs
+*/
+
+.breadcrumbs{
+
+}
+
+/*
+* @subsection   Post
+*/
+
+.news-post{
+  .post-meta {
+    color: $primary;
+    & + * {
+      margin-top: 5px;
+    }
+  }
+  h4 + p {
+    margin-top: 20px;
+  }
+  .post-inset {
+    padding-right: 10px;
+  }
+
+}
+
+/*
+* @subsection   List
+*/
+
+.list{
+  li + li{
+    margin-top: 10px;
+  }
+}
+
+/*
+* @subsection   Inline List
+*/
+
+.inline-list {
+  @include transform(translateY(-30px));
+  margin-bottom: -30px;
+  margin-left: -30px;
+
+
+  > li {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+}
+
+
+/*
+* @subsection   Marked List
+*/
+
+.marked-list {
+  text-align: left;
+  list-style-type: square;
+  padding-left: 15px;
+
+  > li {
+    position: relative;
+    padding-left: 15px;
+    color: $default;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: $screen-xs-min) {
+      width: auto;
+    }
+    a {
+      color: $grayscale-default;
+    }
+
+    & + li {
+      margin-top: 10px;
+    }
+
+    > a:hover {
+      color: $primary;
+    }
+  }
+}
+
+
+/*
+* @subsection   Index List
+*/
+
+.index-list {
+  counter-reset: li;
+
+  > li {
+    > .index-list__counter{
+      &:before {
+        content: counter(li, decimal-leading-zero) '.';
+        counter-increment: li;
+      }
+    }
+  }
+
+  // Sets offset between list rows
+  @include make-flow-offset(30px);
+}
+
+
+/*
+* @subsection   Ordered List
+*/
+
+.ordered-list {
+  padding-left: 20px;
+  > li {
+    padding-left: 10px;
+    list-style-type: decimal;
+    font-family: $primary-font-family;
+    font-size: 18px;
+    p {
+      font-family: $default-font-family;
+      font-size: 16px;
+    }
+    & + li {
+      margin-top: 11px;
+    }
+  }
+}
+
+
+/*
+* @subsection   Terms  List
+*/
+
+.terms-list {
+  > dt + dd {
+    margin-top: 34px;
+  }
+
+  > dd + dt {
+    margin-top: 46px;
+  }
+  & + a {
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+
+/*
+* @subsection   Contact Info
+*/
+
+.contact-info {
+
+  a {
+    color: $secondary-lightest;
+    font-family: $primary-font-family;
+    &:hover {
+      color: $primary;
+    }
+  }
+  dt, dd {
+    display: inline-block;
+    font-size: 14px;
+    @media (min-width: $screen-md-min) {
+      font-size: 16px;
+    }
+  }
+  dt {
+    width: 80px;
+    &.width-auto {
+      width: auto;
+    }
+    @media (min-width: $screen-md-min) {
+      width: 135px;
+    }
+  }
+
+}
+
+/*
+* @subsection   Counter
+*/
+
+.counter{
+
+}
+
+
+/*
+* @subsection   Thumb
+*/
+
+//.thumb {
+//  position: relative;
+//  display: block;
+//  overflow: hidden;
+//
+//  > img {
+//    width: 100%;
+//  }
+//
+//  &__overlay {
+//    position: absolute;
+//    left: 0;
+//    top: 0;
+//    bottom: 0;
+//    right: 0;
+//    background: rgba($grayscale-darken, .5);
+//    opacity: 0;
+//    text-align: center;
+//    transition: .3s all ease;
+//
+//    > *{
+//      vertical-align: middle;
+//      @include transform(translateY(30px));
+//      transition: .3s all ease;
+//    }
+//
+//    &:before{
+//      content: '';
+//      display: inline-block;
+//      height: 50%;
+//    }
+//  }
+//
+//  &:hover {
+//    .thumb__overlay {
+//      opacity: 1;
+//
+//      > *{
+//        @include transform(translateY(0));
+//      }
+//    }
+//  }
+//}
+
+.thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  > img {
+    width: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.6);
+    opacity: 0;
+    text-align: center;
+    transition: .3s all ease;
+
+    &:before{
+      font-size: 30px;
+      color: $secondary-lightest;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @include transform(translate(-50%, -50%));
+    }
+  }
+
+  &:hover {
+    .thumb__overlay {
+      opacity: 1;
+
+      > *{
+        @include transform(translateY(0));
+      }
+    }
+  }
+
+}
+
+
+/*
+* @subsection   Link
+*/
+
+.link {
+  display: inline-block;
+}
+
+
+/*
+* @subsection   Video
+*/
+
+.video {
+  position: relative;
+  padding-bottom: percentage(340 / 570); // percentage( Height / Width ) on PSD
+
+  > iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+/*
+* @section      Extensions
+* @description  This section holds some of style declarations for necessary
+*               scripts
+*/
+
+@import "extensions/_rd-navbar.scss";
+@import "extensions/_rd-mailform.scss";
+@import "extensions/_rd-google-map.scss";
+@import "extensions/_rd-parallax.scss";
+@import "extensions/_ui-to-top.scss";
+@import "extensions/_responsive-tabs.scss";
+@import "extensions/_owl-carousel.scss";
+@import "extensions/_magnific-popup.scss";
+
+/*
+* @section      Page Header
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page header
+*/
+
+.page-header {
+
+}
+
+
+/*
+* @section      Page Content
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page content
+*/
+
+.page-content {
+  .desktop & {
+    min-height: 100vh;
+  }
+}
+
+/*
+* @section      Page Footer
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page footer
+*/
+
+.page-footer {
+  .footer-navbar-nav{
+    padding-top: 24px;
+    @media (min-width: $screen-lg-min) {
+      padding-left: 40px;
+    }
+
+    > li {
+      display: block;
+      @media (min-width: $screen-sm-min) {
+        display: inline-block;
+        & + li {
+          margin-left: 35px;
+        }
+      }
+      @media (min-width: $screen-lg-min) {
+        & + li {
+          margin-left: 50px;
+        }
+      }
+
+      a {
+        font-size: 15px;
+        &:hover {
+          color: #d2d2d2;
+        }
+      }
+      &.active {
+        color: #d2d2d2;
+      }
+    }
+  }
+}
+
+.copyright {
+  padding-top: 18px;
+  padding-bottom: 33px;
+  font-size: 13px;
+  line-height: 21px;
+  a {
+    color: $contrast;
+  }
+}

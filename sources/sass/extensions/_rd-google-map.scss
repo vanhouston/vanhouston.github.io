@@ -1,0 +1,91 @@
+/*
+* @subsection   RD Google Map
+*
+* @description  Describes style declarations for RD Google Map extension
+*
+* @author       Evgeniy Gusarov
+* @link         https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+* @version      1.0.0
+*/
+$map-height: 200px;
+$map-xs-height: 250px;
+$map-sm-height: 350px;
+$map-md-height: 615px;
+
+
+.rd-google-map {
+  position: relative;
+  color: #333;
+  &__model{
+    height: $map-xs-height;
+
+    img {
+      max-width: none !important;
+    }
+
+    @media (min-width: $screen-xs-min) {
+      height: $map-xs-height;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      height: $map-sm-height;
+    }
+
+    @media (min-width: $screen-md-min) {
+      height: $map-md-height;
+    }
+  }
+
+  &__locations{
+    display: none;
+  }
+  .contact-info {
+    display: block;
+    padding: 45px;
+    position: relative;
+
+    .max-width {
+      @media (max-width: $screen-md-min - 1) {
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    dl > dd > a {
+      font-family: $default-font-family;
+      font-weight: 300;
+      &:hover {
+        color: lighten($primary, 20%);
+      }
+    }
+    * + address {
+      margin-top: 10px;
+    }
+    * + dl {
+      margin-top: 10px;
+    }
+    @media (min-width: $screen-md-min) {
+      position: absolute;
+      top: 21%;
+      left: 50%;
+      @include transform(translateX(25%));
+      width: 370px;
+      padding: 50px 40px;
+      * + address {
+        margin-top: 33px;
+      }
+      * + dl {
+        margin-top: 25px;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      @include transform(translateX(40%));
+    }
+    @media (min-width: 1800px) {
+      @include transform(translateX(58%));
+    }
+  }
+}
+
