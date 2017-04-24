@@ -1,6 +1,6 @@
 <?php
 
-$recipients = '';
+$recipients = 'vanhoustonacademy@gmail.com';
 
 try {
     require './phpmailer/PHPMailerAutoload.php';
